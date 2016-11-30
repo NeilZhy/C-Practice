@@ -61,3 +61,8 @@ int main()
 	PrintToReplace(str);
 	return 0;
 }
+
+//Problem description
+//String substitution Spaces :
+//Please implement a function, every space in the character array to replace "% 20".
+//For example input "we are happy.", then output "so.we % 20 are % 20 happy

@@ -1,9 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
+#include<assert.h>
 #include<windows.h>
 
 char *leftstring(char *str, int num,int len)
 {
+	assert(str);
 	char arr[10];
 	char *p = str,*q = str;
 	int i = 0;

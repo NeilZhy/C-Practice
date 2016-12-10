@@ -6,6 +6,7 @@
 char *leftstring(char *str, int num,int len)
 {
 	assert(str);
+	num = num % len;                 //加上一个取余的操作，如果需要左旋的长度超过字符串的长度
 	char arr[10];
 	char *p = str,*q = str;
 	int i = 0;

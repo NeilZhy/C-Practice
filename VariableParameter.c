@@ -16,7 +16,7 @@ int VariableAverage(int val, ...)   //传入的第一个参数的类型是确定的
 	}
 	
 	va_end(arg);                    //关闭容器
-	return sum;
+	return sum;                      //哈哈
 }
 
 int main()

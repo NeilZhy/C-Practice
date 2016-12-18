@@ -2,6 +2,8 @@
 #include<stdio.h>
 #include<windows.h>
 
+//宏函数交换奇数和偶数位
+
 int main()
 {
 	int num = 0,i  =0,j = 0;

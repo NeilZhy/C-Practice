@@ -16,4 +16,5 @@ int main()
 	return 0;
 }
 
+//ºêº¯ÊıÆæÅ¼Î»
 //Write a macro to exchange a number of odd bits and even bits.

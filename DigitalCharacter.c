@@ -24,3 +24,4 @@ int main()
 }
 
 //print out each digit of a number
+//打印十进制数中的每一个数

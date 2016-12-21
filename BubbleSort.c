@@ -13,7 +13,7 @@ void exchange(int *a, int *b)
 void BubbleSort(int *arr, int len)
 {
 	int i = 0, j = len - 1;
-	for (; j > 0; j--)
+	for (; j > 0; j--)               //每次比较前后相连的两个数，然后把大的那个数往后放，这样一次下来，最大的那个数就在数组的最后一个位置了
 	{
 		for (i = 0; i < len-1; i++)
 		{
@@ -40,4 +40,4 @@ int main()
 	return 0;
 }
 
-//Bubble sort  冒泡排序
+//Bubble sort  冒泡

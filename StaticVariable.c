@@ -18,6 +18,8 @@ int main()
 		test();
 	}
 	printf("\n");
+	//printf("%d",num);     //在函数test中用static定义的num只是改变了num的声明周期，即是num在开始被创建之后一直存在，
+	                        //直到整个程序结束，但是需要注意的一点是，num的作用域不变
 	system("pause");
 	return 0;
 }

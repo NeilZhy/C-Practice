@@ -14,7 +14,7 @@ typedef struct PeoInfo
 {
 	char name[NAME_MAX];
 	char sex[SEX_MAX];
-	int age;
+	char age[5];
 	char tel[TEL_MAX];
 	char address[ADDRESS_MAX];
 }PeoInfo;

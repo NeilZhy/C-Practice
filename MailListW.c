@@ -35,7 +35,7 @@ void test()
 		switch (input)
 		{
 		case 1:add(&mail);
-			break;
+            break;
 		case 2:del(&mail);
 			break;
 		case 3:search(&mail);
@@ -71,7 +71,7 @@ void Read(pMailList pmail)
 	{
 		if (pmail->count == pmail->MAX)
 		{
-			realloc(pmail->maillist, sizeof(pmail->maillist)*(pmail->MAX + ADDMAX));
+			pmail->maillist = realloc(pmail->maillist, sizeof(pmail->maillist)*(pmail->MAX + ADDMAX));
 			pmail->MAX += ADDMAX;
 
 		}
@@ -119,7 +119,10 @@ void InitMailList(pMailList pmail)
 		perror("malloc失败");
 		return;
 	}
-	memset(pmail->maillist, 0, ALLMAX*sizeof(PeoInfo));
+
+
+
+	memset(pmail->maillist, 0, ALLMAX*sizeof(PeoInfo));   
 	pmail->MAX = ALLMAX;
 	pmail->count = 0;
 	Read(pmail);    //初始化之后，读取文件放在内存中
@@ -130,7 +133,7 @@ void Dprint(pMailList pmail, int i)
 {
 	printf("name > %s\n", (pmail->maillist[i]).name);
 	printf("sex > %s\n", (pmail->maillist[i]).sex);
-	printf("age > %d\n", (pmail->maillist[i]).age);
+	printf("age > %s\n", (pmail->maillist[i]).age);
 	printf("tel > %s\n", (pmail->maillist[i]).tel);
 	printf("address > %s\n", (pmail->maillist[i]).address);
 }
@@ -144,13 +147,13 @@ void add(pMailList pmail)
 	if (pmail->count == pmail->MAX)
 	{
 		//pPeoInfo = (PeoInfo*)realloc(pmail->maillist, sizeof(pmail->maillist)*(pmail->MAX + ADDMAX));
-		realloc(pmail->maillist, sizeof(pmail->maillist)*(pmail->MAX + ADDMAX));
-		//这块有问题
+		pmail->maillist = realloc((pmail->maillist), sizeof(PeoInfo)*((pmail->MAX) + 3));
+		//这块有问题pmail->maillist
 		/*if (NULL == pPeoInfo)
 		{
 		return;
 		}*/
-		pmail->MAX += ADDMAX;
+		(pmail->MAX) += 3;
 
 	}
 	printf("请输入名字>:");
@@ -160,7 +163,7 @@ void add(pMailList pmail)
 	printf("请输入性别>:");
 	scanf("%s", (pmail->maillist[pmail->count]).sex);
 	printf("请输入年龄>:");
-	scanf("%d", &((pmail->maillist[pmail->count]).age));
+	scanf("%s", (pmail->maillist[pmail->count]).age);
 	printf("请输入电话>:");
 	scanf("%s", (pmail->maillist[pmail->count]).tel);
 	printf("请输入地址>:");
